@@ -22,7 +22,11 @@ module.exports.routes = {
   '/': { view: 'pages/homepage' },
   'get /todos/list': 'TodosController.list',
   'get /todos/add': 'TodosController.add',
-  'post /todos/add': 'TodosController.create'
+  'post /todos/add': 'TodosController.create',
+  'post /todos/delete/:id': 'TodosController.delete',
+  'get /todos/edit/:id': 'TodosController.edit',
+  'post /todos/edit/:id': 'TodosController.update',
+  // 'post /todos/edit/:id': 'TodosController.edit'
 
 
   /***************************************************************************

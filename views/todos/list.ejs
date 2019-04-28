@@ -3,27 +3,34 @@
     Todos
   </li>
 </ol>
-<table class="table table-striped">
+<table class="table table-borderless table-hover">
   <thead>
     <tr>
       <th class="text-secondary font-weight-light">#</th>
       <th class="text-secondary font-weight-light">Name</th>
       <th class="text-secondary font-weight-light">Status</th>
+      <th class="text-secondary font-weight-light">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% todos.forEach(function(todo, index) { %>
-      <tr>
-        <th class="text-secondary font-weight-light"><%= index + 1 %></th>
-        <th class="text-secondary font-weight-light"><%= todo.name %></th>
-        <th>
-          <% if (todo.isCompleted) { %>
-          <span class="badge badge-danger">Active</span>
-          <% } else { %>
-          <span class="badge badge-success">Completed</span>
-          <% } %>
-        </th>
-      </tr>
+    <tr>
+      <td class="text-secondary font-weight-light"><%= index + 1 %></td>
+      <td class="text-secondary font-weight-light"><%= todo.name %></td>
+      <td>
+        <% if (todo.isCompleted) { %>
+        <span class="badge badge-danger">Activated</span>
+        <% } else { %>
+        <span class="badge badge-success">Completed</span>
+        <% } %>
+      </td>
+      <td>
+        <a href="/todos/edit/<%= todo.id %>" class="btn btn-primary">Edit</a>
+        <form class="d-inline" action="/todos/delete/<%= todo.id %>" method='post'>
+          <input type="submit" class="btn btn-danger" value='Delete'>
+        </form>
+      </td>
+    </tr>
     <% }) %>
   </tbody>
 </table>

@@ -1,0 +1,41 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/todos/list">Todos</a>
+  </li>
+  <li class="breadcrumb-item active">
+    Edit
+  </li>
+</ol>
+<form method="post" action="/todos/edit/<%= todo.id %>" id="edit-todo">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      name="name"
+      class="form-control"
+      value="<%= todo.name %>"
+    />
+  </div>
+  <div class="form-group">
+    <label for="status">Status</label>
+    <select
+      class="form-control"
+      id="status"
+      name="status"
+      form="edit-todo"
+      value="<%= todo.isCompleted ? 'Completed' : 'Activated' %>"
+    >
+      <option
+        value="Activated"
+        selected="<%= !todo.isCompleted ? 'selected' : '' %>"
+        >Activated</option
+      >
+      <option
+        value="Completed"
+        selected="<%= todo.isCompleted ? 'selected' : '' %>"
+        >Completed</option
+      >
+    </select>
+  </div>
+  <input type="submit" name="submit" class="btn btn-primary" />
+</form>
