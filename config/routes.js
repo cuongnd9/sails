@@ -20,6 +20,9 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
+  'get /todos/list': 'TodosController.list',
+  'get /todos/add': 'TodosController.add',
+  'post /todos/add': 'TodosController.create'
 
 
   /***************************************************************************
