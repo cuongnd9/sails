@@ -1,4 +1,4 @@
-# Sails Starter
+# sails
 
 > 🚀🐙 Getting Started with Sails.
 
